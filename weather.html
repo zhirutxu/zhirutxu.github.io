@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  
+<header class="container">
+  <div class="row">
+    <a href="http://cse322-zhirutxu.c9users.io/A12/"><h1 class="col-sm-4">CSE322 Final Website</h1></a>
+    <nav class="col-sm-8 text-right">
+      <a href="weather.html"><p>Weather</p></a>
+      <a href="siteExplanation.html"><p>Website Explanation</p></a>
+      <a href="funfacts.html"><p>Fun Facts</p></a>
+    </nav>
+  </div>
+  
+</header>
+<section class="jumbotron">
+  <div class="container">
+    <div class="row text-center">
+      <h2>Weather</h2>
+    </div>
+  </div>
+</section>
+  
+<section class="container">
+  <div class="row">
+
+  <figure class="col-sm-12">
+        <h1>This is the weather page for the website.</h1>
+        <div id="container" />
+
+<script src="ajax.js"></script>
+<script src="parse-response.js"></script>
+
+<script>
+/* global ajax */
+/* global parseResponse */
+var container = document.getElementById('container');
+var url = "http://api.openweathermap.org/data/2.5/weather?q="; 
+var city = "San Bernardino"; 
+var apiKey = "09db6f74bcd17b26a907d3ddf056245a"; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work 
+url += city + "&appid=" + apiKey; 
+ajax(url, function(resp) {       
+resp = parseResponse(resp);  
+container.appendChild(document.createTextNode(resp)); 
+}); 
+</script>
+
+<script src="ajax.js"></script>
+
+    </figure>
+  </div>
+  
+  </section>
+
+
+<footer class="container">
+<div class="row">
+<p class="col-sm-4"></p>
+    <ul class="col-sm-8">
+  <ul class="col-sm-8">
+<li class="col-sm-1">
+  <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/twitter.svg">
+</li>
+<li class="col-sm-1">
+  <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/facebook.svg">
+</li>
+<li class="col-sm-1">
+  <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg">
+</li>
+<li class="col-md-1">
+  <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/medium.svg">
+</li>
+</ul>
+      
+  </ul>
+  </div>
+</footer>
+
+</body>
+</html>
